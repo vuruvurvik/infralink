@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Infralink</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #007bff;
+        }
+        .content {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to InfraLink!</h1>
+        </div>
+        <div class="content">
+            <p>Dear {{ user.username }},</p>
+            <p>Thank you for registering with Infralink. We are excited to have you on board. Infralink is a platform dedicated to managing tasks, projects, and much more to help you stay organized and productive.</p>
+            <p>Here at Infralink, our goal is to provide you with tools and resources to effectively manage your work and achieve your objectives. We hope you find our services useful and we look forward to supporting you on your journey.</p>
+            <p>If you have any questions or need assistance, feel free to reach out to our support team.</p>
+            <p>Best regards,<br>The Infralink Team</p>
+        </div>
+        <div class="footer">
+            <p>&copy; {{ current_year }} Infralink. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

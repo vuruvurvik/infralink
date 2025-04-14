@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PERT Chart</title>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" style="width: 100%; height: 500px;"></div>
+    <script>
+        anychart.onDocumentReady(function () {
+            // Data for the PERT chart
+            var data = [
+                {id: "1", duration: 1, name: "Site Survey"},                  // Task A
+                {id: "2", duration: 4, name: "Foundation Laying"},           // Task B
+                {id: "3", duration: 3, name: "Utility Installation"},         // Task C
+                {id: "4", duration: 1, name: "Quality Inspection"},           // Task D
+                {id: "5", duration: 2, name: "Road Construction", dependsOn: ["1", "4"]},  // Task AD
+                {id: "6", duration: 2, name: "Final Touches", dependsOn: ["2", "3"]}       // Task BC
+            ];
+            
+            // Create a PERT chart
+            var chart = anychart.pert();
+
+            // Set chart data
+            chart.data(data, "asTable");
+
+            // Set the title of the chart
+            chart.title("PERT Chart for Road Construction Project");
+
+            // Set the container id for the chart
+            chart.container("container");
+
+            // Draw the chart
+            chart.draw();
+        });
+    </script>
+</body>
+</html>
